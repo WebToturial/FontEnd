@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fire Base</title>
+        <link rel="stylesheet" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    </head>
+    <body>
+        <div id="login_div" class="main-div">
+            <h3>Firebase Web Login Example</h3>
+            <input type="email" placeholder="Email..." id="email_field"/>
+            <input type="password" placeholder="Password..." id="password_field"/>
+            <button onclick="login()">Login to Account</button>
+        </div>
+        <div id="user_div" class="logged-div">
+            <h3>Welcome User</h3>
+            <p id="user_para">Welcome to Firebase web login to Example. You're currenly logged in.</p>
+            <button onclick="logout()">Logout</button>
+        </div>
+
+        
+
+    <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+    <script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyDvY3Tr1rMdL5fAHV5DdffHILDi9AxLIMQ",
+        authDomain: "fire-test-2018.firebaseapp.com",
+        databaseURL: "https://fire-test-2018.firebaseio.com",
+        projectId: "fire-test-2018",
+        storageBucket: "fire-test-2018.appspot.com",
+        messagingSenderId: "1071799244232"
+    };
+    firebase.initializeApp(config);
+    </script>
+
     <script src="js/index.js"></script>
-</head>
-<body>
-    
-</body>
+
+    </body>
 </html>
