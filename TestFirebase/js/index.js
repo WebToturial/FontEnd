@@ -52,3 +52,34 @@ function logout(){
         // An error happened.
     });
 }
+
+function register(){
+
+    var userEmail = document.getElementById("reg_email").value;
+    var userPass = document.getElementById("reg_password").value;
+    var userConfirmPass = document.getElementById("reg_confirm_password").value;
+
+    if ((userEmail.length > 0) && (userPass.length > 0) && (userConfirmPass.length)){
+
+        if(userPass != userConfirmPass) {
+            
+            window.alert("Error! Mat khau va xac nhan mat khau khong trung khop.")
+        }
+        else{
+            // Register Firebase
+            firebase.auth().createUserWithEmailAndPassword(userEmail, userPass).catch(function(error) {
+                // Handle Errors here.
+                var errorCode = error.code;
+                var errorMessage = error.message;
+                // ...
+                window.alert("Error: " + errorMessage);
+            });
+
+        }
+    }
+    else {
+
+        window.alert("Error! Vui long dien day du thong tin!");
+
+    }
+}
