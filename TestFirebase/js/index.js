@@ -59,7 +59,9 @@ function register(){
     var userPass = document.getElementById("reg_password").value;
     var userConfirmPass = document.getElementById("reg_confirm_password").value;
 
-    if ((userEmail.length > 0) && (userPass.length > 0) && (userConfirmPass.length)){
+
+    //if ((userEmail.length > 0) && (userPass.length > 0) && (userConfirmPass.length)){
+    if( (!userEmail.checkValidity()) && (userPass.checkValidity()) && (userConfirmPass.checkValidity())){}
 
         if(userPass != userConfirmPass) {
             
